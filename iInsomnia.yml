@@ -1,0 +1,379 @@
+_type: export
+__export_format: 4
+__export_date: 2022-10-22T21:22:37.455Z
+__export_source: insomnia.desktop.app:v2022.6.0
+resources:
+  - _id: req_wrk_c68226459f3d403c918c6043fe1a9ed0ef2244d5
+    parentId: fld_wrk_c68226459f3d403c918c6043fe1a9ed098311619
+    modified: 1666473736389
+    created: 1666472759668
+    url: "{{ base_url }}/movie/add"
+    name: Add a new movie to the database
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "id": 0,
+          "title": "string",
+          "runtime": 0,
+          "year": 0,
+          "generes": [
+            "string"
+          ],
+          "director": "string",
+          "actors": "string",
+          "plot": "string",
+          "posterUrl": "string"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1666472759668
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_wrk_c68226459f3d403c918c6043fe1a9ed098311619
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666472759670
+    created: 1666472759670
+    name: movies
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1666472759670
+    _type: request_group
+  - _id: wrk_c68226459f3d403c918c6043fe1a9ed0
+    parentId: null
+    modified: 1666470564856
+    created: 1666470564856
+    name: recruitment-task-tsh
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_wrk_c68226459f3d403c918c6043fe1a9ed09d468f27
+    parentId: fld_wrk_c68226459f3d403c918c6043fe1a9ed098311619
+    modified: 1666473456304
+    created: 1666472759665
+    url: "{{ base_url }}/movie"
+    name: Get movie from database
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - name: duration
+        disabled: true
+        value: "0"
+        id: pair_714925bdd187448eb87750acc3e485dc
+      - name: generes
+        disabled: true
+        value: string
+        id: pair_fe5f1aa6f41146dfa4038fcc35c86631
+    headers: []
+    authentication: {}
+    metaSortKey: -1666472759665
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1b4f9e8d2088473a8adf305c5b67fe8c
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666473406859
+    created: 1666470564880
+    url: "{{ _.base_url }}"
+    name: get_random
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1664293189710
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2c0b5b02744544a6a03ede774c624711
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666473414228
+    created: 1666473001022
+    url: "{{ _.base_url }}"
+    name: get_random_by_duration
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e941020a8b264ad7afb73abcc073ac6d
+        name: duration
+        value: "100"
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1664293189660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6a0b8eb8a4384177ba9e3481f1d95787
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666473418474
+    created: 1666473065388
+    url: "{{ _.base_url }}"
+    name: get_all_by_generes
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_f2ab2fdf36b843cc89fb3ce14e3744ab
+        name: generes
+        value: Comedy,Fantasy
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1664293189610
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_67b327b7234343e1a9a7a1f25962c0a8
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666473424716
+    created: 1666473091059
+    url: "{{ _.base_url }}"
+    name: get_all_by_generes_and_duration
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_cfe88174585d4fe0a992deb5e21923c0
+        name: duration
+        value: "100"
+        description: ""
+      - id: pair_aca081b6714349fb8856a3518ed71a05
+        name: generes
+        value: Comedy,Fantasy
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1664293189560
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_86e2c326177c4ba6855cdf4eb83b6039
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666472940402
+    created: 1666470564858
+    name: Base Environment
+    data:
+      base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1664293189703
+    _type: environment
+  - _id: jar_9881eb7b7aad4e0890ea1472469e8a72
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666470564872
+    created: 1666470564872
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_65e67b9368c346f4b0dc504d4f7142c3
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666473723016
+    created: 1666470564876
+    fileName: recruitment-task-tsh
+    contents: |-
+      openapi: 3.0.0
+
+      info:
+        description: "Recruitment task TSH"
+        version: 1.0.2
+        title: Recruitment task TSH
+        contact:
+          email: piotr@pplaczek.pl
+
+      tags:
+        - name: movies
+          
+      paths:
+        /movie/add:
+          put:
+            tags:
+              - movies
+            summary: Add a new movie to the database
+            description: ""
+            operationId: addMovie
+            requestBody:
+              $ref: "#/components/requestBodies/movie"
+            responses:
+              "201":
+                description: Successful operation
+              "404":
+                description: Movie not found
+              "405":
+                description: Invalid input
+          
+        /movie:
+          get:
+            tags:
+              - movies
+            summary: Get movie from database
+            description: ""
+            parameters:
+              - name: duration
+                in: query
+                description: ""
+                required: false
+                schema:
+                  type: number
+              - name: generes
+                in: query
+                description: ""
+                required: false
+                schema:
+                  type: array
+                  items:
+                    type: string 
+            responses:
+             "200":
+                description: Successful operation
+                content:
+                  application/json:
+                    schema:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/movie"
+             "405":
+               description: Invalid input
+
+      servers:
+        - url: http://localhost:3000/api
+        
+      components:
+        requestBodies:
+          movie:
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/movie"
+            description: Movie object that needs to be added to the database
+            required: true
+        schemas:
+          movie:
+            type: object
+            required:
+              - title
+              - runtime
+              - year
+              - generes
+              - director
+            properties:
+              id:
+                type: integer
+                format: int64
+              title:
+                type: string
+              runtime:
+                type: number
+              year:
+                type: number
+              generes:
+                type: array
+                items:
+                  type: string
+              director:
+                type: string
+              actors:
+                type: string
+              plot:
+                type: string
+              posterUrl:
+                type: string
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_42212b59f5ef4f1c91a355065108349e
+    parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
+    modified: 1666470564885
+    created: 1666470564885
+    name: Example Test Suite
+    _type: unit_test_suite
+  - _id: env_67ea60cea0e44df58b987d4066ef9baf
+    parentId: env_86e2c326177c4ba6855cdf4eb83b6039
+    modified: 1666470564861
+    created: 1666470564861
+    name: vmpc-api-local-http
+    data:
+      scheme: http
+      host: localhost
+      port: 3000
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - host
+        - port
+    color: null
+    isPrivate: false
+    metaSortKey: 1664293312684
+    _type: environment
+  - _id: env_97c8d92be73d4c34ad7fc504ee67a100
+    parentId: env_86e2c326177c4ba6855cdf4eb83b6039
+    modified: 1666473736244
+    created: 1666470564865
+    name: recruitment-task-tsh
+    data:
+      base_url: http://localhost:3000/api
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1664293312734
+    _type: environment
+  - _id: env_env_86e2c326177c4ba6855cdf4eb83b6039_sub
+    parentId: env_86e2c326177c4ba6855cdf4eb83b6039
+    modified: 1666473727229
+    created: 1666473723001
+    name: OpenAPI env
+    data:
+      scheme: http
+      base_path: /api
+      host: localhost:3000
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1666473723001
+    _type: environment
