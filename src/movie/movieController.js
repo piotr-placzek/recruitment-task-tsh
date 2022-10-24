@@ -8,8 +8,8 @@ const movieService = require('./movieService');
 async function addMovie(req, res, next) {
     try {
         const movie = validator.validate(req.body, movieObjectSchema);
-        await movieService.addMovie(movie);
-        res.status(httpResponseStatus.CREATED).send();
+        const result = await movieService.addMovie(movie);
+        res.status(httpResponseStatus.CREATED).send(result);
     } catch (error) {
         next(error);
     }

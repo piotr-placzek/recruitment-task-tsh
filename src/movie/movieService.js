@@ -1,9 +1,11 @@
 'use strict';
 
-const ValidationError = require('../validation/validationError');
+const jsonDb = require('../db');
+const MovieDao = require('./movieDao');
 
-async function addMovie() {
-    return Promise.reject(new ValidationError('asd'));
+async function addMovie(movie) {
+    const dao = new MovieDao(jsonDb);
+    return dao.addMovie(movie);
 }
 
 module.exports = {
