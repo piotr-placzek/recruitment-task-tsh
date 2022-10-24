@@ -5,10 +5,14 @@ const movieObjectSchema = require('../validation/movieObjectSchema');
 const validator = require('../validation/validator');
 const movieService = require('./movieService');
 
-function addMovie(req, res) {
-    const movie = validator.validate(req.body, movieObjectSchema);
-    movieService.addMovie(movie);
-    res.status(httpResponseStatus.CREATED).send();
+async function addMovie(req, res, next) {
+    try {
+        const movie = validator.validate(req.body, movieObjectSchema);
+        await movieService.addMovie(movie);
+        res.status(httpResponseStatus.CREATED).send();
+    } catch (error) {
+        next(error);
+    }
 }
 
 module.exports = {

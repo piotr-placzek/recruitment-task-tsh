@@ -14,7 +14,7 @@ describe('Basic validator', () => {
 
         expect(() => {
             validator.validate(object, schema);
-        }).toThrow(new ValidationError({ message: '"id" is required' }));
+        }).toThrow(new ValidationError('"id" is required'));
     });
 
     it('should return given object', () => {
