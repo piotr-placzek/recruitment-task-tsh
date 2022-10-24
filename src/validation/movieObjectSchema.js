@@ -11,7 +11,7 @@ const schema = Joi.object({
     actors: Joi.string().optional(),
     plot: Joi.string().optional(),
     posterUrl: Joi.string().optional(),
-    generes: Joi.array()
+    genres: Joi.array()
         .min(1)
         .items(
             Joi.string().valid(

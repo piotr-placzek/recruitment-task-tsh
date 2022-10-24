@@ -1,15 +1,15 @@
 'use strict';
 
-const schema = require('../../src/validator/movieObjectValidator');
+const schema = require('../../src/validation/movieObjectSchema');
 const {
     MOVIES_WITH_MISSING_REQUIRED_FIELD,
     MOVIES_WITH_WRONG_FIELD_TYPE,
-    MOVIES_WITH_INVALID_GENERES,
+    MOVIES_WITH_INVALID_GENRES,
     VALID_MOVIE_OBJECT,
     MOVIES_WITH_TO_LONG_STRINGS,
 } = require('./mocks');
 
-describe('Movie object validator', () => {
+describe('Movie object schema', () => {
     describe('should return an error for object with missing required field', () => {
         for (const [key, movie] of Object.entries(MOVIES_WITH_MISSING_REQUIRED_FIELD)) {
             it(`${key}`, () => {
@@ -28,8 +28,8 @@ describe('Movie object validator', () => {
         }
     });
 
-    describe('should return an error for object with invalid array of generes', () => {
-        for (const [key, movie] of Object.entries(MOVIES_WITH_INVALID_GENERES)) {
+    describe('should return an error for object with invalid array of genres', () => {
+        for (const [key, movie] of Object.entries(MOVIES_WITH_INVALID_GENRES)) {
             it(`${key}`, () => {
                 const { error } = schema.validate(movie);
                 expect(error).not.toBeUndefined();

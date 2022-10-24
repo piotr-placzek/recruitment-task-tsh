@@ -9,7 +9,7 @@ const VALID_MOVIE_OBJECT = {
     actors: 'actors',
     plot: 'plot',
     posterUrl: 'url',
-    generes: ['Comedy', 'Fantasy'],
+    genres: ['Comedy', 'Fantasy'],
 };
 
 const MOVIES_WITH_TO_LONG_STRINGS = {
@@ -22,7 +22,7 @@ const MOVIES_WITH_TO_LONG_STRINGS = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     director: {
         id: 10,
@@ -33,7 +33,7 @@ const MOVIES_WITH_TO_LONG_STRINGS = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
 };
 
@@ -46,7 +46,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     title: {
         id: 10,
@@ -56,7 +56,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     year: {
         id: 10,
@@ -66,7 +66,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     runtime: {
         id: 10,
@@ -76,7 +76,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     director: {
         id: 10,
@@ -86,7 +86,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
 };
 
@@ -100,7 +100,7 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     title: {
         id: 10,
@@ -111,7 +111,7 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     year: {
         id: 10,
@@ -122,7 +122,7 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     runtime: {
         id: 10,
@@ -133,7 +133,7 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
     director: {
         id: 10,
@@ -144,11 +144,11 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Comedy', 'Fantasy'],
+        genres: ['Comedy', 'Fantasy'],
     },
 };
 
-const MOVIES_WITH_INVALID_GENERES = {
+const MOVIES_WITH_INVALID_GENRES = {
     'empty array': {
         id: 10,
         title: 'Test movie',
@@ -158,9 +158,9 @@ const MOVIES_WITH_INVALID_GENERES = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: [],
+        genres: [],
     },
-    'nonexisting generes': {
+    'nonexisting genres': {
         id: 10,
         title: 'Test movie',
         year: 2022,
@@ -169,7 +169,7 @@ const MOVIES_WITH_INVALID_GENERES = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        generes: ['Invalid genere'],
+        genres: ['Invalid genere'],
     },
 };
 
@@ -178,5 +178,5 @@ module.exports = {
     MOVIES_WITH_TO_LONG_STRINGS,
     MOVIES_WITH_MISSING_REQUIRED_FIELD,
     MOVIES_WITH_WRONG_FIELD_TYPE,
-    MOVIES_WITH_INVALID_GENERES,
+    MOVIES_WITH_INVALID_GENRES,
 };
