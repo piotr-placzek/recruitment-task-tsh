@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2022-10-24T12:27:04.001Z
+__export_date: 2022-10-22T21:22:37.455Z
 __export_source: insomnia.desktop.app:v2022.6.0
 resources:
   - _id: req_wrk_c68226459f3d403c918c6043fe1a9ed0ef2244d5
     parentId: fld_wrk_c68226459f3d403c918c6043fe1a9ed098311619
-    modified: 1666614404598
+    modified: 1666473736389
     created: 1666472759668
     url: "{{ base_url }}/movie/add"
     name: Add a new movie to the database
@@ -15,12 +15,12 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"id": 10,
+          "id": 0,
           "title": "string",
           "runtime": 0,
           "year": 0,
-          "genres": [
-            "Comedy"
+          "generes": [
+            "string"
           ],
           "director": "string",
           "actors": "string",
@@ -209,7 +209,7 @@ resources:
     _type: cookie_jar
   - _id: spc_65e67b9368c346f4b0dc504d4f7142c3
     parentId: wrk_c68226459f3d403c918c6043fe1a9ed0
-    modified: 1666614405572
+    modified: 1666473723016
     created: 1666470564876
     fileName: recruitment-task-tsh
     contents: |-
@@ -256,7 +256,7 @@ resources:
                 required: false
                 schema:
                   type: number
-              - name: genres
+              - name: generes
                 in: query
                 description: ""
                 required: false
@@ -295,7 +295,7 @@ resources:
               - title
               - runtime
               - year
-              - genres
+              - generes
               - director
             properties:
               id:
@@ -307,7 +307,7 @@ resources:
                 type: number
               year:
                 type: number
-              genres:
+              generes:
                 type: array
                 items:
                   type: string
