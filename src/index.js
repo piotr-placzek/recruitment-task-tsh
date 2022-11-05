@@ -3,13 +3,15 @@
 const CONFIG = require('./config');
 const express = require('express');
 const logger = require('./service/loggerService');
+const routing = require('./routing');
+const basicErrorHandler = require('./middleware/basicErrorHandler');
 
 async function main() {
     const app = express();
 
-    app.get('/', (req, res) => {
-        res.send('Hello World!');
-    });
+    app.use(express.json());
+    app.use(CONFIG.API_BASE, routing);
+    app.use(basicErrorHandler);
 
     app.listen(CONFIG.PORT, () => {
         logger.info('Ready');
