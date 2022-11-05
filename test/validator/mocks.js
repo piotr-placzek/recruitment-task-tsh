@@ -1,7 +1,6 @@
 'use strict';
 
 const VALID_MOVIE_OBJECT = {
-    id: 10,
     title: 'Test movie',
     year: 2022,
     runtime: 100,
@@ -14,7 +13,6 @@ const VALID_MOVIE_OBJECT = {
 
 const MOVIES_WITH_TO_LONG_STRINGS = {
     title: {
-        id: 10,
         title: Array(256).fill('X').join(),
         year: 2022,
         runtime: 100,
@@ -25,7 +23,6 @@ const MOVIES_WITH_TO_LONG_STRINGS = {
         genres: ['Comedy', 'Fantasy'],
     },
     director: {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 100,
@@ -38,18 +35,7 @@ const MOVIES_WITH_TO_LONG_STRINGS = {
 };
 
 const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
-    id: {
-        title: 'Test movie',
-        year: 2022,
-        runtime: 100,
-        director: 'Piotr P',
-        actors: 'actors',
-        plot: 'plot',
-        posterUrl: 'url',
-        genres: ['Comedy', 'Fantasy'],
-    },
     title: {
-        id: 10,
         year: 2022,
         runtime: 100,
         director: 'Piotr P',
@@ -59,7 +45,6 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         genres: ['Comedy', 'Fantasy'],
     },
     year: {
-        id: 10,
         title: 'Test movie',
         runtime: 100,
         director: 'Piotr P',
@@ -69,7 +54,6 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         genres: ['Comedy', 'Fantasy'],
     },
     runtime: {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         director: 'Piotr P',
@@ -79,7 +63,6 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
         genres: ['Comedy', 'Fantasy'],
     },
     director: {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 100,
@@ -91,19 +74,7 @@ const MOVIES_WITH_MISSING_REQUIRED_FIELD = {
 };
 
 const MOVIES_WITH_WRONG_FIELD_TYPE = {
-    id: {
-        id: 'id',
-        title: 'Test movie',
-        year: 2022,
-        runtime: 100,
-        director: 'Piotr P',
-        actors: 'actors',
-        plot: 'plot',
-        posterUrl: 'url',
-        genres: ['Comedy', 'Fantasy'],
-    },
     title: {
-        id: 10,
         title: 300,
         year: 2022,
         runtime: 100,
@@ -114,7 +85,6 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         genres: ['Comedy', 'Fantasy'],
     },
     year: {
-        id: 10,
         title: 'Test movie',
         year: 'year',
         runtime: 100,
@@ -125,7 +95,6 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         genres: ['Comedy', 'Fantasy'],
     },
     runtime: {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 'runtime',
@@ -136,7 +105,6 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
         genres: ['Comedy', 'Fantasy'],
     },
     director: {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 100,
@@ -150,7 +118,6 @@ const MOVIES_WITH_WRONG_FIELD_TYPE = {
 
 const MOVIES_WITH_INVALID_GENRES = {
     'empty array': {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 100,
@@ -161,7 +128,6 @@ const MOVIES_WITH_INVALID_GENRES = {
         genres: [],
     },
     'nonexisting genres': {
-        id: 10,
         title: 'Test movie',
         year: 2022,
         runtime: 100,
@@ -169,7 +135,41 @@ const MOVIES_WITH_INVALID_GENRES = {
         actors: 'actors',
         plot: 'plot',
         posterUrl: 'url',
-        genres: ['Invalid genere'],
+        genres: ['Invalid genre'],
+    },
+};
+
+const GET_MOVIE_VALID_QUERY = {
+    GET_MOVIE_EMPTY_QUERY: {},
+
+    GET_MOVIE_QUERY_WITH_VALID_DURATION: {
+        duration: 100,
+    },
+
+    GET_MOVIE_QUERY_WITH_VALID_GENRES: {
+        genres: ['Comedy', 'Crime'],
+    },
+};
+
+const GET_MOVIE_INVALID_QUERY = {
+    GET_MOVIE_QUERY_WITH_INVALID_DURATION_TYPE: {
+        duration: true,
+    },
+
+    GET_MOVIE_QUERY_WITH_INVALID_DURATION_VALUE: {
+        duration: -100,
+    },
+
+    GET_MOVIE_QUERY_WITH_EMPTY_GENRES: {
+        genres: [],
+    },
+
+    GET_MOVIE_QUERY_WITH_INVALID_GENRES_TYPE: {
+        genres: 'Comedy',
+    },
+
+    GET_MOVIE_QUERY_WITH_INVALID_GENRES_TYPES: {
+        genres: [100, 100],
     },
 };
 
@@ -179,4 +179,6 @@ module.exports = {
     MOVIES_WITH_MISSING_REQUIRED_FIELD,
     MOVIES_WITH_WRONG_FIELD_TYPE,
     MOVIES_WITH_INVALID_GENRES,
+    GET_MOVIE_VALID_QUERY,
+    GET_MOVIE_INVALID_QUERY,
 };

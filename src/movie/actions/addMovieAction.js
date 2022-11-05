@@ -1,11 +1,11 @@
 'use strict';
 
-const httpResponseStatus = require('../httpResponseStatus');
-const jsonDb = require('../db');
-const movieObjectSchema = require('../movieObjectSchema');
-const validator = require('../validation/validator');
+const httpResponseStatus = require('../../httpResponseStatus');
+const jsonDb = require('../../db');
+const movieObjectSchema = require('../schema/movieObjectSchema');
+const validator = require('../../validation/validator');
 
-const MovieDao = require('./movieDao');
+const MovieDao = require('../movieDao');
 
 async function addMovieAction(req, res, next) {
     try {

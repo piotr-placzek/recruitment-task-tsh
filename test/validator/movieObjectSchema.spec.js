@@ -1,6 +1,6 @@
 'use strict';
 
-const schema = require('../../src/validation/movieObjectSchema');
+const schema = require('../../src/movie/schema/movieObjectSchema');
 const {
     MOVIES_WITH_MISSING_REQUIRED_FIELD,
     MOVIES_WITH_WRONG_FIELD_TYPE,
