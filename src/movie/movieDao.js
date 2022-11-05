@@ -1,5 +1,7 @@
 'use strict';
 
+const durationRangeFactory = require('../factory/durationRangeFactory');
+
 const TABLE = '/movies';
 
 class MovieDao {
@@ -9,6 +11,10 @@ class MovieDao {
 
     async addMovie(movie) {
         return this.db.insert(TABLE, movie);
+    }
+
+    async getMovie({ duration, genres }) {
+        const durationRange = durationRangeFactory(duration);
     }
 }
 
