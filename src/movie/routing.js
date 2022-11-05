@@ -1,9 +1,10 @@
 'use strict';
 
-const controller = require('./movieController');
 const express = require('express');
 const router = express.Router();
 
-router.put('/add', controller.addMovie);
+const addMovieAction = require('./actions/addMovieAction');
+
+router.put('/add', addMovieAction);
 
 module.exports = router;
