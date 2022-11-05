@@ -2,7 +2,7 @@
 
 const httpResponseStatus = require('../httpResponseStatus');
 const jsonDb = require('../db');
-const movieObjectSchema = require('../validation/movieObjectSchema');
+const movieObjectSchema = require('../movieObjectSchema');
 const validator = require('../validation/validator');
 
 const MovieDao = require('./movieDao');
